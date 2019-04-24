@@ -3,3 +3,7 @@
 *.faE
 *.log
 *.csi
+*.vcf
+slurm*.out
+*.fna
+test_*.txt
