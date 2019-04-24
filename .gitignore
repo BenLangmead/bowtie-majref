@@ -7,3 +7,4 @@
 slurm*.out
 *.fna
 test_*.txt
+*.fai
