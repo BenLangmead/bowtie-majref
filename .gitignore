@@ -8,3 +8,7 @@ slurm*.out
 *.fna
 test_*.txt
 *.fai
+*.bt2
+*.ebwt
+.*.out
+.*.err
