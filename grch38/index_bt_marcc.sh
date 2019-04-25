@@ -2,10 +2,10 @@
 #SBATCH
 #SBATCH --partition=shared
 #SBATCH --nodes=1
-#SBATCH --mem=12G
+#SBATCH --mem=16G
 #SBATCH --output=.index_bt.out
-#SBATCH --error=.index_bt.er
-#SBATCH --time=4:00:00
+#SBATCH --error=.index_bt.err
+#SBATCH --time=5:00:00
 #SBATCH --ntasks-per-node=4
 
 bowtie-build h38_1kgmaj.fa grch38_1kgmaj
