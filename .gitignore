@@ -12,3 +12,4 @@ test_*.txt
 *.ebwt
 .*.out
 .*.err
+*.zip
