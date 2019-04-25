@@ -3,7 +3,7 @@
 BASE=hg19_1kgmaj
 EXT=ebwt
 
-zip ${BASE}.zip \
+zip ${BASE}_bt.zip \
     ${BASE}.1.${EXT} \
     ${BASE}.2.${EXT} \
     ${BASE}.3.${EXT} \

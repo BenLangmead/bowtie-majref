@@ -1,9 +1,9 @@
 #!/bin/sh
 
-BASE=hg19_1kgmaj
-EXT=bt2
+BASE=grch38_1kgmaj
+EXT=ebwt
 
-zip ${BASE}_bt2.zip \
+zip ${BASE}_bt.zip \
     ${BASE}.1.${EXT} \
     ${BASE}.2.${EXT} \
     ${BASE}.3.${EXT} \

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE=hg19_1kgmaj
+BASE=grch38_1kgmaj
 EXT=bt2
 
 zip ${BASE}_bt2.zip \
