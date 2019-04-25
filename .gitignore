@@ -13,3 +13,4 @@ test_*.txt
 .*.out
 .*.err
 *.zip
+var_x_h38.txt
