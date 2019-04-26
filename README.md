@@ -15,12 +15,10 @@ Those links also appear on the [Bowtie web page](http://bowtie-bio.sourceforge.n
 
 The FASTA files with major-allele SNPs inserted are also available:
 
-| Aligner  | Reference           | FASTA file                                                           |
-|----------|---------------------|----------------------------------------------------------------------|
-| Bowtie   | GRCh38 + major SNPs | TBA   |
-| Bowtie   | hg19 + major SNPs   | TBA     |
-| Bowtie 2 | GRCh38 + major SNPs | TBA   |
-| Bowtie 2 | hg19 + major SNPs   | TBA |
+| Reference           | FASTA file                                                        |
+|---------------------|-------------------------------------------------------------------|
+| GRCh38 + major SNPs | ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/grch38_1kgmaj.fa.gz |
+| hg19 + major SNPs   | ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19_1kgmaj.fa.gz   |
 
 #### Instructions
 
