@@ -2,16 +2,16 @@
 
 set -ex
 
-#   # 1. Download hg38 genome
-#   wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
-#   bgzip -d GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
-#   
-#   # 2. Download WGS vcf from 1000 Genomes Project
-#   wget http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20181203_biallelic_SNV/ALL.wgs.shapeit2_integrated_v1a.GRCh38.20181129.sites.vcf.gz
-#   
-#   # 3. Convert the header from v4.3 to v4.2
-#   sh ../scripts/convert_header_v43_to_v42.sh ALL.wgs.shapeit2_integrated_v1a.GRCh38.20181129.sites
-#   
+# 1. Download hg38 genome
+wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
+bgzip -d GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
+
+# 2. Download WGS vcf from 1000 Genomes Project
+wget http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/release/20181203_biallelic_SNV/ALL.wgs.shapeit2_integrated_v1a.GRCh38.20181129.sites.vcf.gz
+
+# 3. Convert the header from v4.3 to v4.2
+sh ../scripts/convert_header_v43_to_v42.sh ALL.wgs.shapeit2_integrated_v1a.GRCh38.20181129.sites
+
 # 4. Build major allele ref (no chrY)
 sh ../scripts/build_major_allele_ref.sh h38_1kgmaj_no_y ALL.wgs.shapeit2_integrated_v1a.GRCh38.20181129.sites_v42.vcf.gz GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
@@ -41,4 +41,3 @@ sed -i 's/>X/>chrX/' h38_1kgmaj_no_y_update_x.fa
 cd ..
 mv h38_liftover/h38_1kgmaj_no_y_update_x.fa .
 python ../scripts/replace_fa_seq.py -f h38_1kgmaj_no_y_update_x.fa -s chrY -n h38_liftover/h38_1kgmaj_y.fa > h38_1kgmaj.fa
-# python ../scripts/replace_fa_seq.py -f h38_1kgmaj_no_y_update_x.fa -s Y -n h38_liftover/h38_1kgmaj_y.fa > h38_1kgmaj.fa
