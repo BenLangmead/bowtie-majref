@@ -8,8 +8,8 @@ Pre-built major-allele-SNP reference indexes are available:
 |----------|---------------------|----------------------------------------------------------------------|
 | Bowtie   | GRCh38 + major SNPs | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/grch38_1kgmaj_bt.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/grch38_1kgmaj_bt.zip) |
 | Bowtie   | hg19 + major SNPs   | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19_1kgmaj_bt.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19_1kgmaj_bt.zip)     |
-| Bowtie 2 | GRCh38 + major SNPs | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/hg19_1kgmaj_bt2.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/hg19_1kgmaj_bt2.zip)   |
-| Bowtie 2 | hg19 + major SNPs   | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/grch38_1kgmaj_bt2.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/grch38_1kgmaj_bt2.zip) |
+| Bowtie 2 | GRCh38 + major SNPs | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/grch38_1kgmaj_bt2.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/grch38_1kgmaj_bt2.zip)   |
+| Bowtie 2 | hg19 + major SNPs   | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/hg19_1kgmaj_bt2.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/hg19_1kgmaj_bt2.zip) |
 
 Those links also appear on the [Bowtie web page](http://bowtie-bio.sourceforge.net) and [Bowtie 2 web page](http://bowtie-bio.sourceforge.net/bowtie2) in the right-hand sidebar.
 
