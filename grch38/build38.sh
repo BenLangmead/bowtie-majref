@@ -19,9 +19,7 @@ sh ../scripts/build_major_allele_ref.sh h38_1kgmaj_no_y ALL.wgs.shapeit2_integra
 mkdir h38_liftover
 cd h38_liftover
 samtools faidx ../GCA_000001405.15_GRCh38_no_alt_analysis_set.fna chrY > chrY.fa
-sed -i 's/chr//' chrY.fa
 mv ../h38_1kgmaj_no_y.fa .
-sed -i 's/chr//' h38_1kgmaj_no_y.fa
 
 # 6. Download chrY vcf from 1000 Genomes Project (GRCh38-liftover)
 wget http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/supporting/GRCh38_positions/ALL.chrY_GRCh38_sites.20170504.vcf.gz
@@ -34,4 +32,4 @@ sh ../../scripts/build_major_allele_ref.sh h38_1kgmaj_no_y_update_x ALL.chrX_GRC
 # 8. Merge two genomes
 cd ..
 mv h38_liftover/h38_1kgmaj_no_y_update_x.fa .
-python ../scripts/replace_fa_seq.py -f h38_1kgmaj_no_y_update_x.fa -s Y -n h38_liftover/h38_1kgmaj_y.fa > h38_1kgmaj.fa
+python ../scripts/replace_fa_seq.py -f h38_1kgmaj_no_y_update_x.fa -s chrY -n h38_liftover/h38_1kgmaj_y.fa > h38_1kgmaj.fa
