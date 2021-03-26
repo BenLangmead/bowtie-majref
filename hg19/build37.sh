@@ -13,7 +13,6 @@ if [[ ! -f hg19.fa ]] ; then
     done
     cd ..
 fi
-# sed -iE 's/^>chr/>/' hg19.fa
 
 # 2. Download WGS vcf from 1000 Genomes Project
 if [[ ! -f ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz ]] ; then
@@ -48,5 +47,3 @@ if [[ ! -f hg19.major.vcf.gz.csi ]]; then
 fi
 
 bcftools consensus -f hg19.fa -o hg19_1kgmaj.fa hg19.major.vcf.gz
-# 3. build major allele ref
-# sh ../scripts/build_major_allele_ref.sh h37_1kgmaj ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz hg19.fa
