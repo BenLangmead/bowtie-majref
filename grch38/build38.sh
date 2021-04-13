@@ -2,10 +2,12 @@
 
 set -ex
 
+REF="GCA_000001405.15_GRCh38_no_alt_analysis_set.fna"
+
 # 1. Download hg38 genome
-if [[ ! -f GCA_000001405.15_GRCh38_no_alt_analysis_set.fna ]]; then
+if [[ ! -f ${REF} ]]; then
     wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
-    bgzip -d GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
+    bgzip -d ${REF}.gz
 fi
 
 # GRCh38 p13
@@ -46,9 +48,9 @@ if [[ ! -f ALL.chrX_GRCh38_sites.20170504.renamed.vcf.gz ]]; then
     bcftools annotate --rename-chrs GRCh38.chrom_map -O z -o ALL.chrX_GRCh38_sites.20170504.renamed.vcf.gz ALL.chrX_GRCh38_sites.20170504.vcf.gz
 fi
 
-if [[ ! -f wgs.concat.vcf.gz ]]; then
-    bcftools concat -O z -o wgs.concat.unsorted.vcf.gz ALL.wgs.shapeit2_integrated_snvindels_v2a.GRCh38.27022019.sites.renamed.vcf.gz ALL.chrX_GRCh38_sites.20170504.renamed.vcf.gz ALL.chrY_GRCh38_sites.20170504.renamed.vcf.gz
-    bcftools sort -O z -o wgs.concat.vcf.gz wgs.concat.unsorted.vcf.gz
+WG_VCF="wgs.concat.vcf.gz"
+if [[ ! -f ${WG_VCF} ]]; then
+    bcftools concat ALL.wgs.shapeit2_integrated_snvindels_v2a.GRCh38.27022019.sites.renamed.vcf.gz ALL.chrX_GRCh38_sites.20170504.renamed.vcf.gz ALL.chrY_GRCh38_sites.20170504.renamed.vcf.gz | bcftools sort -O z -o ${WG_VCF}
 fi
 
 # 3. Extract major alleles
@@ -72,19 +74,23 @@ filter_major_snv_indel() {
     bcftools index ${OUT}
 }
 
+MAJOR_VCF_SNV="wgs.concat.major_snvs.vcf.gz"
 # Obtain major-alleles. Output: wgs.concat.major_snvs.vcf.gz or wgs.concat.major_snvindels.vcf.gz
-if [[ ! -f wgs.concat.major_snvs.vcf.gz ]]; then
-    filter_major_snv wgs.concat.vcf.gz wgs.concat.major_snvs.vcf.gz
+if [[ ! -f ${MAJOR_VCF_SNV} ]]; then
+    filter_major_snv ${WG_VCF} ${MAJOR_VCF_SNV}
 fi
-if [[ ! -f wgs.concat.major_snvindels.vcf.gz ]]; then
-    filter_major_snv_indel wgs.concat.vcf.gz wgs.concat.major_snvindels.vcf.gz
+MAJOR_VCF_SNV_INDEL="wgs.concat.major_snvindels.vcf.gz"
+if [[ ! -f ${MAJOR_VCF_SNV_INDEL} ]]; then
+    filter_major_snv_indel ${WG_VCF} ${MAJOR_VCF_SNV_INDEL}
 fi
 
 # 4. Build the major-alelle reference
 if [[ ! -f grch38_1kgmaj_snvs.fa ]]; then
-    bcftools consensus -f GCA_000001405.15_GRCh38_no_alt_analysis_set.fna -o grch38_1kgmaj_snvs.fa wgs.concat.major_snvs.vcf.gz
+    bcftools consensus -f ${REF} -o grch38_1kgmaj_snvs.fa ${MAJOR_VCF_SNV}
 fi
 if [[ ! -f grch38_1kgmaj_snvindels.fa ]]; then
-    bcftools consensus -f GCA_000001405.15_GRCh38_no_alt_analysis_set.fna -o grch38_1kgmaj_snvindels.fa wgs.concat.major_snvindels.vcf.gz
+    bcftools consensus -f ${REF} -o grch38_1kgmaj_snvindels.fa ${MAJOR_VCF_SNV_INDEL}
 fi
 
+cut -f 1-2 ${REF}.fai > GRCh38.length_map
+leviosam serialize -v 
