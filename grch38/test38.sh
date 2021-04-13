@@ -1,6 +1,6 @@
 set -ex
 
-MAJ="grch38_1kgmaj.fa"
+MAJ="grch38_1kgmaj_snvs.fa"
 REF="GCA_000001405.15_GRCh38_no_alt_analysis_set.fna"
 
 if [[ -f wgs.concat.vcf.gz ]]; then
@@ -15,13 +15,11 @@ else
     VCF_Y="ALL.chrY_GRCh38_sites.20170504.vcf.gz"
     bgzip -cd ${VCF} | \
         python ../scripts/vcf_processing.py --out_var_loc --min_af 0.5 --max_allele_len 1 | \
-        python ../scripts/test_major_allele_ref.py -m ${MAJ} \
-        -r ${REF} > test_h38.txt
+        python ../scripts/test_major_allele_ref.py -m ${MAJ} -r ${REF} > test_h38.txt
 
     bgzip -cd ${VCF_Y} | \
         python ../scripts/vcf_processing.py --out_var_loc --min_af 0.5 --max_allele_len 1 | \
-        python ../scripts/test_major_allele_ref.py -m ${MAJ} \
-        -r ${REF} -t chrY > test_h38_y.txt
+        python ../scripts/test_major_allele_ref.py -m ${MAJ} -r ${REF} -t chrY > test_h38_y.txt
 
     bgzip -cd ${VCF} | \
         grep 'chrX' | \
