@@ -8,5 +8,7 @@
 #SBATCH --time=5:00:00
 #SBATCH --ntasks-per-node=4
 
-bowtie-build grch38_1kgmaj.fa grch38_1kgmaj
+module load bowtie
+#bowtie-build grch38_1kgmaj_snvindels.fa grch38_1kgmaj_snvindels
+bowtie-build grch38_1kgmaj_snvs.fa grch38_1kgmaj_snvs
 
