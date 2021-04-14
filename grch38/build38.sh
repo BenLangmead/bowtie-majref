@@ -92,5 +92,12 @@ if [[ ! -f grch38_1kgmaj_snvindels.fa ]]; then
     bcftools consensus -f ${REF} -o grch38_1kgmaj_snvindels.fa ${MAJOR_VCF_SNV_INDEL}
 fi
 
-cut -f 1-2 ${REF}.fai > GRCh38.length_map
-leviosam serialize -v 
+# Index REF
+if [[ ! -f ${REF}.fai ]]; then
+    samtools faidx ${REF}
+fi
+# Build levioSAM index
+if [[ ! -f grch38_1kgmaj_snvindels.lft ]]; then
+    cut -f 1-2 ${REF}.fai > GRCh38.length_map
+    leviosam serialize -v ${MAJOR_VCF_SNV_INDEL} -k GRCh38.length_map -p grch38_1kgmaj_snvindels
+fi
