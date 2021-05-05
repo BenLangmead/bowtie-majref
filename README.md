@@ -1,26 +1,42 @@
-This collection of scripts are used to build [1KGenomes project](http://www.internationalgenome.org)-informed major-allele reference genomes for Bowtie 1 and Bowtie 2.  The current scripts build *linear* references with major-allele *SNPs only*.  Since no indels are included, the coordinate system will remain the same even once major alleles are inserted.  Thus, these indexes should be completely compatible with downstream tools as long as those tools are also using the major-allele references.  We are still considering the best way to also handle major-allele indels, etc.
+This collection of scripts are used to build [1KGenomes project](http://www.internationalgenome.org)-informed major-allele reference genomes for Bowtie 1 and Bowtie 2.  The current scripts build *linear* references with major alleles. We provide SNP-only and SNP-and-indel indexes for both Bowtie versions. The inclusion of indels change the genomic coordinate system. We recommend using [levioSAM](https://github.com/alshai/levioSAM) to perform accurate and scalable lift-over for alignments against the SNP-and-indel indexes.
 
-#### Downloads
+### Downloads
 
+#### SNP-only 
 Pre-built major-allele-SNP reference indexes are available:
 
-| Aligner  | Reference           | Index zip                                                            |
-|----------|---------------------|----------------------------------------------------------------------|
-| Bowtie   | GRCh38 + major SNPs | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/grch38_1kgmaj_bt.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/grch38_1kgmaj_bt.zip) |
-| Bowtie   | hg19 + major SNPs   | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19_1kgmaj_bt.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19_1kgmaj_bt.zip)     |
-| Bowtie 2 | GRCh38 + major SNPs | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/grch38_1kgmaj_bt2.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/grch38_1kgmaj_bt2.zip)  |
-| Bowtie 2 | hg19 + major SNPs   | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/hg19_1kgmaj_bt2.zip](ftp://ftp.ccb.jhu.edu/pub/data/bowtie2_indexes/hg19_1kgmaj_bt2.zip)  |
+| Aligner  | Reference                     | Index zip                                                            |
+|----------|-------------------------------|----------------------------------------------------------------------|
+| Bowtie   | GRCh38 + major SNPs           | [to be upload]()  |
+| Bowtie   | hg19 + major SNPs             | [to be upload]()  |
+| Bowtie 2 | GRCh38 + major SNPs           | [to be upload]()  |
+| Bowtie 2 | hg19 + major SNPs             | [to be upload]()  |
 
-Those links also appear on the [Bowtie web page](http://bowtie-bio.sourceforge.net) and [Bowtie 2 web page](http://bowtie-bio.sourceforge.net/bowtie2) in the right-hand sidebar.
+#### SNP-and-indel
+
+Pre-built major-allele **SNP-and-indel** reference indexes are available below.
+The pre-built levioSAM index (`.lft`) is also included.
+We provide a [tutorial](https://github.com/alshai/levioSAM/wiki/Alignment-with-variant-aware-reference-genomes) of using levioSAM in a major-allele alignment workflow.
+
+| Aligner  | Reference                     | Index zip                                                            |
+|----------|-------------------------------|----------------------------------------------------------------------|
+| Bowtie   | GRCh38 + major SNP-and-indels | [to be upload]()  |
+| Bowtie   | hg19 + major SNP-and-indels   | [to be upload]()  |
+| Bowtie 2 | GRCh38 + major SNP-and-indels | [to be upload]()  |
+| Bowtie 2 | hg19 + major SNP-and-indels   | [to be upload]()  |
+
+Those links will also appear on the [Bowtie web page](http://bowtie-bio.sourceforge.net) and [Bowtie 2 web page](http://bowtie-bio.sourceforge.net/bowtie2) in the right-hand sidebar.
 
 The FASTA files with major-allele SNPs inserted are also available:
 
-| Reference           | FASTA file                                                        |
-|---------------------|-------------------------------------------------------------------|
-| GRCh38 + major SNPs | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/grch38_1kgmaj.fa.gz](ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/grch38_1kgmaj.fa.gz) |
-| hg19 + major SNPs   | [ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19_1kgmaj.fa.gz](ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19_1kgmaj.fa.gz)   |
+| Reference                     | FASTA file                                                        |
+|-------------------------------|-------------------------------------------------------------------|
+| GRCh38 + major SNPs           | [to be upload]() |
+| GRCh38 + major SNP-and-indels | [to be upload]() |
+| hg19 + major SNPs             | [to be upload]() |
+| hg19 + major SNP-and-indels   | [to be upload]() |
 
-#### Instructions
+### Instructions
 
 Workflow:
 
@@ -48,7 +64,7 @@ Requirements for building genome indexes (4th step above):
 * [bowtie](http://bowtie-bio.sourceforge.net) ([conda](https://anaconda.org/bioconda/bowtie))
 * [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2) ([conda](https://anaconda.org/bioconda/bowtie2))
 
-#### Authors
+### Authors
 
 * Nae-Chyun Chen
 * Ben Langmead
