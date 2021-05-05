@@ -25,7 +25,7 @@ We provide a [tutorial](https://github.com/alshai/levioSAM/wiki/Alignment-with-v
 | Bowtie 2 | GRCh38 + major SNP-and-indels | [to be upload]()  |
 | Bowtie 2 | hg19 + major SNP-and-indels   | [to be upload]()  |
 
-Those links will also appear on the [Bowtie web page](http://bowtie-bio.sourceforge.net) and [Bowtie 2 web page](http://bowtie-bio.sourceforge.net/bowtie2) in the right-hand sidebar.
+Those links **will** also appear on the [Bowtie web page](http://bowtie-bio.sourceforge.net) and [Bowtie 2 web page](http://bowtie-bio.sourceforge.net/bowtie2) in the right-hand sidebar.
 
 The FASTA files with major-allele SNPs inserted are also available:
 
