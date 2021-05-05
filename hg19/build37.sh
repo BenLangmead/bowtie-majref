@@ -57,7 +57,7 @@ fi
 MAJOR_VCF_SNV_INDEL_RAW="wgs.concat.major_snvindels.vcf.gz"
 MAJOR_VCF_SNV_INDEL="wgs.concat.major_snvindels.renamed.vcf.gz"
 if [[ ! -f ${MAJOR_VCF_SNV_INDEL_RAW} ]]; then
-    filter_major_snv ${VCF} ${MAJOR_VCF_SNV_INDEL_RAW}
+    filter_major_snv_indel ${VCF} ${MAJOR_VCF_SNV_INDEL_RAW}
 fi
 if [[ ! -f ${MAJOR_VCF_SNV_INDEL}.csi ]]; then
     bcftools annotate --rename-chrs hg19.chrom_map -O z -o ${MAJOR_VCF_SNV_INDEL} ${MAJOR_VCF_SNV_INDEL_RAW}
