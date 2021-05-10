@@ -64,6 +64,9 @@ Requirements for building genome indexes (4th step above):
 * [bowtie](http://bowtie-bio.sourceforge.net) ([conda](https://anaconda.org/bioconda/bowtie))
 * [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2) ([conda](https://anaconda.org/bioconda/bowtie2))
 
+Requirement for building major-allele FASTAs including indels (2th step above):
+* [levioSAM](https://github.com/alshai/levioSAM) ([conda](https://anaconda.org/bioconda/leviosam))
+
 ### Authors
 
 * Nae-Chyun Chen
