@@ -8,5 +8,7 @@
 #SBATCH --time=5:00:00
 #SBATCH --ntasks-per-node=4
 
-bowtie2-build h37_1kgmaj.fa hg19_1kgmaj
+module load bowtie2
+bowtie2-build hg19_1kgmaj_snvs.fa hg19_1kgmaj_snvs
+bowtie2-build hg19_1kgmaj_snvindels.fa hg19_1kgmaj_snvindels
 

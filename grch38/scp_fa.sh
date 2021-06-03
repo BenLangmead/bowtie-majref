@@ -2,7 +2,7 @@
 
 set -ex
 
-AR=h38_1kgmaj.fa.gz
+AR=grch38_1kgmaj.fa
 DST_AR=grch38_1kgmaj.fa.gz
 
 for PTH in ftp.ccb/pub/data/bowtie_indexes ftp.ccb/pub/data/bowtie2_indexes ; do

@@ -26,12 +26,13 @@ def parse_args():
     args = parser.parse_args()
     return args
 
+
 def read_genome(fn, target):
     '''
     Reads genome and supports more than one chromosomes
 
-    Inputs
-        fn: fasta file name
+    Inputs:
+        - fn: FASTA file name
     Output:
         genome in a list
     '''
@@ -55,6 +56,31 @@ def read_genome(fn, target):
     if target == None or name == target:
         genome[name] = seq
     return genome
+
+
+def print_diff(key, diff_dict, num_tp_dict, fn_dict):
+    ''' Summarize differences and print. '''
+    fp_dict = diff_dict[key]
+    fn_dict = fn_dict[key]
+    num_tp = num_tp_dict[key]
+
+    if len(fp_dict) == 0 and len(fn_dict) == 0:
+        if num_tp == 0:
+            print (key, 'PASS (NO_DIFF)')
+        else:
+            print (key, 'PASS (NUM_EDITS=%d)' % num_tp)
+        return 
+    else:
+        print (key, 'FAILED')
+
+        print ('fp=', len(fp_dict))
+        if len(fp_dict) > 0:
+            print(fp_dict)
+        print ('tp=', num_tp)
+        print ('fn=', len(fn_dict))
+        if len(fn_dict) > 0:
+            print(fn_dict)
+
 
 def test_major_allele_ref(fn_ma_ref, fn_ref, fn_check_points, target):
     if target != None and target.startswith('chr') == False:
@@ -132,27 +158,10 @@ def test_major_allele_ref(fn_ma_ref, fn_ref, fn_check_points, target):
             fn_dict[chrom].append([chrom, vid, pos, ref, alt, af])
 
     if target:
-        print (target)
-        print ('fp=', len(diff_dict[target]))
-        if len(diff_dict[target]) != 0:
-            print (diff_dict[target])
-        print ('tp=', num_tp_dict[target])
-        print ('fn=', len(fn_dict[target]))
-        if len(fn_dict[target]) != 0:
-            print (fn_dict[target])
+        print_diff(target, diff_dict, num_tp_dict, fn_dict)
     else:
         for k in genome_ref.keys():
-            print (k)
-            if (len(diff_dict[k]) == 0) and (num_tp_dict[k] == 0) and (len(fn_dict[k]) == 0):
-                print ('no difference')
-                continue
-            print ('fp=', len(diff_dict[k]))
-            if len(diff_dict[k]) != 0:
-                print (diff_dict[k])
-            print ('tp=', num_tp_dict[k])
-            print ('fn=', len(fn_dict[k]))
-            if len(fn_dict[k]) != 0:
-                print (fn_dict[k])
+            print_diff(k, diff_dict, num_tp_dict, fn_dict)
 
 
 if __name__ == '__main__':
