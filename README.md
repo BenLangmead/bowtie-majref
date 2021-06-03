@@ -7,10 +7,8 @@ Pre-built major-allele-SNP reference indexes are available:
 
 | Aligner  | Reference                     | Index zip                                                            |
 |----------|-------------------------------|----------------------------------------------------------------------|
-| Bowtie   | GRCh38 + major SNPs           | [to be upload]()  |
-| Bowtie   | hg19 + major SNPs             | [to be upload]()  |
-| Bowtie 2 | GRCh38 + major SNPs           | [to be upload]()  |
-| Bowtie 2 | hg19 + major SNPs             | [to be upload]()  |
+| Bowtie 2 | GRCh38 + major SNPs           | [s3](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvs_bt2.zip)  |
+| Bowtie 2 | hg19 + major SNPs             | [s3](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvs_bt2.zip)  |
 
 #### SNP-and-indel
 
@@ -20,21 +18,19 @@ We provide a [tutorial](https://github.com/alshai/levioSAM/wiki/Alignment-with-v
 
 | Aligner  | Reference                     | Index zip                                                            |
 |----------|-------------------------------|----------------------------------------------------------------------|
-| Bowtie   | GRCh38 + major SNP-and-indels | [to be upload]()  |
-| Bowtie   | hg19 + major SNP-and-indels   | [to be upload]()  |
-| Bowtie 2 | GRCh38 + major SNP-and-indels | [to be upload]()  |
-| Bowtie 2 | hg19 + major SNP-and-indels   | [to be upload]()  |
+| Bowtie 2 | GRCh38 + major SNP-and-indels | [s3](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels_bt2.zip)  |
+| Bowtie 2 | hg19 + major SNP-and-indels   | [s3](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels_bt2.zip)  |
 
 Those links **will** also appear on the [Bowtie web page](http://bowtie-bio.sourceforge.net) and [Bowtie 2 web page](http://bowtie-bio.sourceforge.net/bowtie2) in the right-hand sidebar.
 
 The FASTA files with major-allele SNPs inserted are also available:
 
-| Reference                     | FASTA file                                                        |
-|-------------------------------|-------------------------------------------------------------------|
-| GRCh38 + major SNPs           | [to be upload]() |
-| GRCh38 + major SNP-and-indels | [to be upload]() |
-| hg19 + major SNPs             | [to be upload]() |
-| hg19 + major SNP-and-indels   | [to be upload]() |
+| Reference                     | FASTA file                                                        | LevioSAM index |
+|-------------------------------|-------------------------------------------------------------------|----------------|
+| GRCh38 + major SNPs           | [to be upload]() | N/A |
+| GRCh38 + major SNP-and-indels | [to be upload]() | [s3](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels.lft) |
+| hg19 + major SNPs             | [to be upload]() | N/A |
+| hg19 + major SNP-and-indels   | [to be upload]() | [s3](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels.lft) |
 
 ### Instructions
 
