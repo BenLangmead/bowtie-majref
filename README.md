@@ -28,10 +28,10 @@ The FASTA files with major-allele SNPs inserted are also available:
 
 | Reference                     | FASTA file                                                                        | LevioSAM index |
 |-------------------------------|-----------------------------------------------------------------------------------|----------------|
-| GRCh38 + major SNPs           | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvs_bt2.fa.gz)      | N/A |
-| GRCh38 + major SNP-and-indels | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels_bt2.fa.gz) | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels.lft) |
-| hg19 + major SNPs             | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvs_bt2.fa.gz)        | N/A |
-| hg19 + major SNP-and-indels   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels_bt2.fa.gz)   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels.lft) |
+| GRCh38 + major SNPs           | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvs.fa.gz)      | N/A |
+| GRCh38 + major SNP-and-indels | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels.fa.gz) | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels.lft) |
+| hg19 + major SNPs             | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvs.fa.gz)        | N/A |
+| hg19 + major SNP-and-indels   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels.fa.gz)   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels.lft) |
 
 ### Instructions
 
