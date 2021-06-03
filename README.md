@@ -5,32 +5,33 @@ This collection of scripts are used to build [1KGenomes project](http://www.inte
 #### SNP-only 
 Pre-built major-allele-SNP reference indexes are available:
 
-| Aligner  | Reference                     | Index zip                                                            |
-|----------|-------------------------------|----------------------------------------------------------------------|
-| Bowtie 2 | GRCh38 + major SNPs           | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvs_bt2.zip)  |
-| Bowtie 2 | hg19 + major SNPs             | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvs_bt2.zip)  |
+| Aligner             | Reference                     | Index zip                                                                   |
+|---------------------|-------------------------------|-----------------------------------------------------------------------------|
+| Bowtie and Bowtie 2 | GRCh38 + major SNPs           | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvs_bt2.zip)  |
+| Bowtie and Bowtie 2 | hg19 + major SNPs             | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvs_bt2.zip)    |
 
 #### SNP-and-indel
 
 Pre-built major-allele **SNP-and-indel** reference indexes are available below.
 The pre-built levioSAM index (`.lft`) is also included.
-We provide a [tutorial](https://github.com/alshai/levioSAM/wiki/Alignment-with-variant-aware-reference-genomes) of using levioSAM in a major-allele alignment workflow.
+We provide a [quick example](https://github.com/alshai/levioSAM#example-with-pre-built-indexes) and a [detailed tutorial](https://github.com/alshai/levioSAM/wiki/Alignment-with-variant-aware-reference-genomes) of using levioSAM in a major-allele alignment workflow. 
 
-| Aligner  | Reference                     | Index zip                                                            |
-|----------|-------------------------------|----------------------------------------------------------------------|
-| Bowtie 2 | GRCh38 + major SNP-and-indels | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels_bt2.zip)  |
-| Bowtie 2 | hg19 + major SNP-and-indels   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels_bt2.zip)  |
+
+| Aligner             | Reference                     | Index zip                                                                        |
+|---------------------|-------------------------------|----------------------------------------------------------------------------------|
+| Bowtie and Bowtie 2 | GRCh38 + major SNP-and-indels | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels_bt2.zip)  |
+| Bowtie and Bowtie 2 | hg19 + major SNP-and-indels   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels_bt2.zip)    |
 
 Those links **will** also appear on the [Bowtie web page](http://bowtie-bio.sourceforge.net) and [Bowtie 2 web page](http://bowtie-bio.sourceforge.net/bowtie2) in the right-hand sidebar.
 
 The FASTA files with major-allele SNPs inserted are also available:
 
-| Reference                     | FASTA file                                                        | LevioSAM index |
-|-------------------------------|-------------------------------------------------------------------|----------------|
-| GRCh38 + major SNPs           | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvs_bt2.fa.gz) | N/A |
+| Reference                     | FASTA file                                                                        | LevioSAM index |
+|-------------------------------|-----------------------------------------------------------------------------------|----------------|
+| GRCh38 + major SNPs           | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvs_bt2.fa.gz)      | N/A |
 | GRCh38 + major SNP-and-indels | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels_bt2.fa.gz) | [https](https://genome-idx.s3.amazonaws.com/bt/grch38_1kgmaj_snvindels.lft) |
-| hg19 + major SNPs             | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvs_bt2.fa.gz) | N/A |
-| hg19 + major SNP-and-indels   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels_bt2.fa.gz) | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels.lft) |
+| hg19 + major SNPs             | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvs_bt2.fa.gz)        | N/A |
+| hg19 + major SNP-and-indels   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels_bt2.fa.gz)   | [https](https://genome-idx.s3.amazonaws.com/bt/hg19_1kgmaj_snvindels.lft) |
 
 ### Instructions
 
